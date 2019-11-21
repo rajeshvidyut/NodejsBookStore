@@ -1,0 +1,62 @@
+<% include ../partials/header.ejs %>
+<div id="wrapper">
+    <div class="container-fluid">
+        <div class="col-md-12 offset-4">
+            <div class="card-body">
+                <% if (message != '') { %>
+                    <p class="text-center text-danger"><%= message %></p>
+                <% } %>
+                <h3>Edit Profile</h3><hr>
+                <% if (user) { %>
+                    <form class="add-player-form" action="" method="post" enctype="multipart/form-data">
+                        <div class="form-row">
+                            <input type="hidden" name="id" value="<%= user.id %>">
+                            <div class="form-group col-md-4">
+                                <label for="UserName">UserName</label>
+                                <input type="text" class="form-control" name="username" id="username" placeholder="User Name" value="<%= user.name %>">
+                            </div>
+                        </div>
+                        <div class="form-row">                    
+                            <div class="form-group col-md-4">
+                                <label for="Email">Email</label>
+                                <input type="text" class="form-control" name="email" id="email" placeholder="Email" value="<%= user.email %>">
+                            </div>
+                        </div>
+                        <div class="form-row">                                        
+                            <div class="form-group col-md-4">
+                                <label for="MobileNumber">Mobile Number</label>
+                                <input type="text" class="form-control" name="mobile_number" id="mobile_number" placeholder="Mobile Number" value="<%= user.mobile_number %>" >
+                            </div>
+                        </div>
+                        <div class="form-row">                                                            
+                            <div class="form-group col-md-4">
+                                <label for="Password">Password</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="Password" value="<%= user.password %>" >
+                            </div>
+                        </div>
+                        <div class="form-row">                                                                                
+                            <div class="form-group col-md-4">
+                                <label for="Select">User Type</label>
+                                <select class="form-control" id="user_type" value="<%= user.password %>" >
+                                    <option value="-1">SELECT</option>
+                                    <option value="1">Sales</option>
+                                    <option value="2">Customer</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">                                                                                
+                            <button type="submit" class="btn btn-primary float-right">Submit</button>&nbsp;
+                            <a href='/list' type="submit" class="btn btn-default float-right">Back</a>
+                        </div>
+                    
+                    </form>
+                </div>
+                
+                <% } else { %>
+                    <p class="text-center">Player Not Found. Go <a href="/add">here</a> to add players.</p>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<% include ../partials/footer.ejs %>

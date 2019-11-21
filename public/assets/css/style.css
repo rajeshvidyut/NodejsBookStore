@@ -1,0 +1,70 @@
+
+.banner {
+    background-image: url("/assets/img/bookstore2.jpg");
+    /* background-attachment: fixed; */
+    /* background-color: #eee */
+    height:220px;
+    background-repeat: no-repeat;
+    /* width: 100% !important; */
+    background-size: cover;
+    /* width: 100%; */
+
+}
+body{
+    /* overflow-y: scroll; */
+    /* position: sticky;
+     */overflow-x: hidden; 
+    overflow-y: scroll; 
+
+}
+
+/* Styles for wrapping the search box */
+
+.main {
+    width: 50%;
+    margin: 50px auto;
+}
+
+/* Bootstrap 4 text input with search icon */
+
+.has-search .form-control {
+    padding-left: 2.375rem;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #aaa;
+}
+
+.content{
+    margin-top:50px;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
+    /* background-color: #21796a !important; */
+}
+
+.top{
+    margin-top:70px;
+}
+
+.dropdown_auto {
+    background-color: #fff;
+    width: 257px;
+    text-decoration: none;
+    list-style: none;
+    padding: 6px;
+    border: 1px solid #eee;
+    margin-right: 100px;
+    border-radius: 2px;
+    cursor: pointer; 
+
+}

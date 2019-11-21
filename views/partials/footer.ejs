@@ -1,0 +1,43 @@
+</div>
+</body>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+
+
+  <script>
+    $(document).ready(function(){
+        $('#term').on('keyup', function(){
+            var parameters = { search: $(this).val() };
+            $.ajax({  
+                type:'GET',               
+                url:'/type_search',
+                data:parameters,
+                success:function(data) {
+                    // console.log(data);
+                  if(data === '')  {
+                    $('#filter_records').html('');
+                    return;
+                  }
+                  var output = '<div class="input-group custom-search-form" >';
+                  var count = 1;
+                    $.each(data, function(key, val){
+                        output += '<li class="dropdown_auto" onclick="getPaging('+val.isbn_number+')">' + val.isbn_number + ' - <i>'+val.book_title+'</i></li>';
+                        count++;
+                    });
+                  output += '</div>';
+                  $('#filter_records').html(output);
+                }
+            });
+        });
+    });
+    function getPaging(book_id){
+        url = "http://localhost:2000/search?term="+book_id;
+        window.location = url;
+    }
+    </script>
+</html>

@@ -1,0 +1,27 @@
+<div class="banner">
+    <form action="search">
+      <div class="row" offset-4">
+        <div class="col-md-3 offset-4"  style="margin-top:100px;">
+          <!-- <input class="form-control" type="text" name="term" placeholder="Search ISBN number" aria-label="Search"> -->
+          <div class="input-group custom-search-form">
+            <!-- <input class="form-control" type="text" name="term" placeholder="Search ISBN number" aria-label="Search"> -->
+            <input class="form-control"  autocomplete="off" name="term" id="term" type="text" placeholder="Search ISBN number" /> 
+
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="submit">
+                <span class="glyphicon glyphicon-search"></span>
+              </button>
+            </span>
+          </div>
+          <div class="input-group custom-search-form" >
+
+            <div id="filter_records" ></div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <!-- <input class="typeahead tt-query" spellcheck="false" autocomplete="off" name="typeahead" type="text" />  -->
+</div>
+
+<div class="container-fluid main-container">

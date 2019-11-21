@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>KRDS Task</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Customize Edit -->
+  <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+
+</head>
+<body style="overflow-y: scroll;">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Book Store</a>
+  <% if(typeof user != "undefined"){  %>
+    <li class="nav-item dropdown ml-auto navbar-nav">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dashboard
+      </a>
+      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="/user_edit/<%= user.id %>">Profile</a>
+        <a class="dropdown-item" href="/add">Add Book</a>
+        <a class="dropdown-item" href="/logout">Logout</a>
+      </div>
+    </li>
+    <% } else { %>
+    <li class="nav-item dropdown ml-auto navbar-nav">
+        <!-- <a href="/login" class="dropdown-item">Login</a> -->
+        <a class="nav-link " href="/login" id="navbardrop"  >
+          Login
+        </a>
+    </li>
+  <% } %>     
+</nav>
+
+
+

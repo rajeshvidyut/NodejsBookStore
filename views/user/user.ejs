@@ -1,0 +1,60 @@
+<% include ../partials/header.ejs %>
+<div id="wrapper">
+    <% include ../partials/sidebar.ejs %>
+    <div class="container-fluid">
+        <div class="content-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+            <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Tables</li>
+        </ol>
+        <!-- DataTables Example -->
+        <div class="card mb-3">
+            <div class="card-header">
+            <i class="fas fa-table"></i>
+            <%= title %>
+            <a class="btn btn-primary btn-sm float-right" href="/user_add" title="Add a New Player">Add a Player</a>
+        </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <% if (users.length > 0) {%>
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Image</th>
+                                <th>Email</th>
+                                <th>Mobile Number</th>
+                                <th>Created Date</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% users.forEach((user, index) => { %>
+                            <tr>
+                                <td><%= user.name %></td>
+                                <td><img src=/assets/img/<%= user.photo %> width="100px"></td>
+                                <td><%= user.email %></td>
+                                <td><%= user.mobile_number %></td>
+                                <td><%= user.created_at %></td>
+                                <td>
+                                    <a href="/user_edit/<%= user.id %>"  rel="noopener" class="btn btn-sm btn-success"><i class="fa fa-pencil-square" aria-hidden="true"></i></a>
+                                    <a href="/delete/<%= user.id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                </td>
+                            </tr>
+                            <% }) %>
+                        </tbody>
+                    </table>
+                    <% } else { %>
+                        <p class="text-center">No users found. Go <a href="/user_add" >here</a> to add users.</p>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+    <!-- Sticky Footer -->
+</div>
+<% include ../partials/footer.ejs %>

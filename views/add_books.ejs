@@ -1,0 +1,36 @@
+<% include partials/header.ejs %>
+    <div class="row top">
+        <div class="col-md-6 offset-3 jumbotron">
+            <% if (message != '') { %>
+                <p class="text-center text-danger"><%= message %></p>
+            <% } %>
+            <h4 style="text-align:center">Create Book</h4>
+            <form class="add-books-form" action="" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="form-group col-md-12 ">
+                        <input type="text" class="form-control" name="book_title" id="book-title" placeholder="Book Title" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input type="text" class="form-control" name="isbn_number" id="isbn-number" placeholder="ISBN" required>
+                    </div>
+                </div>
+                <!-- <input type="hidden" name="user_id" id="user_id" placeholder="user_id" value="<%= //user.id %>"> -->
+
+                <!-- <div class="form-row">
+                    <div class="form-group col-md-12 ">
+                        <textarea class="md-textarea form-control" name="description" id="description" placeholder="Description" rows="3" required></textarea>
+                    </div>
+                </div> -->
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="book-img"><b>Book Image</b></label><br>
+                        <input type="file" name="image" id="book-img" class="" >
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Add Books</button>
+                <a href="/list"  class="btn btn-default float-right">Back</a>
+
+            </form>
+        </div>
+    </div>
+<% include partials/footer.ejs %>
