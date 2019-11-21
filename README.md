@@ -1,5 +1,3 @@
-# NodejsBookStore
-This is Simple book store app developed by #NodeJs #Mysql #KnexJs #ExpressJs #Passport oAuth2 #Facebook oAuth2 #Dockerized and Deploy to #Heroku and #Heroku Container
 # Book Store
 
 "# Developed By Nodejs, ExpressJs, Mysql, KnexJs, Passport oauth2, Facebook oauth, Dockerized and Deploy to Heroku"
